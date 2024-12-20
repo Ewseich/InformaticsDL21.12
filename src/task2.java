@@ -20,17 +20,19 @@ public class task2 {
                     right = mid - 1;
                 }
             }
-            if (left < n) {
-                minint = arrn[left];
+            int resultwhile = left;
+            if (resultwhile == 0) {
+                System.out.println(arrn[0]);
+                continue;
             }
-            if (right >= 0) {
-                if (Math.abs(arrn[right] - arrk[i]) < Math.abs(minint - arrk[i])) {
-                    minint = arrn[right];
-                } else if (Math.abs(arrn[right] - arrk[i]) == Math.abs(minint - arrk[i])) {
-                    minint = Math.min(minint, arrn[right]);
-                }
+            if (resultwhile == n) {
+                System.out.println(arrn[n-1]);
+                continue;
             }
-            System.out.print(minint + " ");
+            int can1 = arrn[resultwhile], can2 = arrn[resultwhile - 1];
+            System.out.println((Math.abs(can2 - arrk[i]) <= Math.abs(can1 - arrk[i])) ? can2 : can1);
+// распишите 33 строчку нормальным ифом
+
         }
     }
 }
