@@ -20,7 +20,16 @@ public class task2 {
                     right = mid - 1;
                 }
             }
-
+            if (left < n) {
+                minint = arrn[left];
+            }
+            if (right >= 0) {
+                if (Math.abs(arrn[right] - arrk[i]) < Math.abs(minint - arrk[i])) {
+                    minint = arrn[right];
+                } else if (Math.abs(arrn[right] - arrk[i]) == Math.abs(minint - arrk[i])) {
+                    minint = Math.min(minint, arrn[right]);
+                }
+            }
             System.out.print(minint + " ");
         }
     }
